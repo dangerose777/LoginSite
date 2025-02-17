@@ -8,7 +8,7 @@ Login / Register / Todo site with "admin panel". As admin you can delete users t
 
 ## Setup:
 ```
-git clone {link}
+git clone https://github.com/dangerose777/LoginSite.git
 ```
 ```
 cd LoginSite
@@ -22,7 +22,7 @@ npm run dev
 ```
 ### To do:
 #### UI
-- [ ]  Login / register site
+- [x]  Login / register site
 - [ ]  User site
 - [ ]  Admin site
 #### FUNCTIONALITY
