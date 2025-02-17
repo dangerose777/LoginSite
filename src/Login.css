@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#form {
+    width: 330px;
+    height: 250px;
+    padding: 10px;
+    border: 2px solid #3F4F44;
+    border-radius: 10px;
+}
+
+#inputUsername {
+    margin-top: 20px;
+}
+
+#inputPassword {
+    margin-top: 20px;
+}
+
+.buttonLogin {
+    margin-top: 10px;
+}
+
+#orTextLogin {
+    margin-top: -31px;
+    margin-left: 80px
+}
+
+#orTextRegister {
+    margin-top: -31px;
+    margin-left: 95px
+}
+
+.buttonOrRegister {
+    margin-top: -85px;
+    margin-left: 110px;
+}
+
+.buttonOrLogin {
+    margin-top: -85px;
+    margin-left: 125px;
+}
