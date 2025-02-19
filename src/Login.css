@@ -48,3 +48,33 @@ body {
     margin-top: -85px;
     margin-left: 125px;
 }
+
+.usersList {
+    position: absolute;
+    margin: -250px;
+    margin-top: -200px;
+}
+
+#loginError {
+    color: red;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-container input {
+    width: 100%;
+    padding-right: 40px; /* Miejsce na ikonę */
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+  }

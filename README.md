@@ -5,6 +5,8 @@ Login / Register / Todo site with "admin panel". As admin you can delete users t
 - React / Vite
 - Bootstrap
 - MySQL
+- Axios
+- React Icons
 
 ## Setup:
 ```
@@ -16,6 +18,24 @@ cd LoginSite
 ```
 npm install
 ```
+
+## Host PHP:
+If you have XAMPP:
+1) WIN+R
+2) sysdm.cpl
+3) advanced
+4) environment variables
+5) in system variables find Path
+6) edit
+7) add "C:\xampp\htdocs\LoginSite\backend" (or other path where you downloaded project)
+8) open powershell
+```
+cd C:\xampp\htdocs\LoginSite\backend
+```
+```
+php -S localhost:8000
+```
+
 ### Run:
 ```
 npm run dev
@@ -26,7 +46,8 @@ npm run dev
 - [ ]  User site
 - [ ]  Admin site
 #### FUNCTIONALITY
-- [ ]  Login / register site
+- [x]  Login / register site
 - [ ]  User site
 - [ ]  Admin site
-- [ ]  Database
+- [x]  Database Users
+- [ ]  Database Tasks

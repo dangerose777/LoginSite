@@ -1,11 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"))
+
+  if(!user) {
+    navigate("/");
+  }
+
   return (
     <div>
-      <h1>Strona About</h1>
+      <h1>Welcome {user.username}</h1>
       <Link to="/">
-        <button>Wróć do Strony Głównej</button>
+        <button className="btn btn-danger" onClick={() => localStorage.removeItem("user")}>Logout</button>
       </Link>
     </div>
   );
