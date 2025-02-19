@@ -33,7 +33,7 @@ function Login() {
       console.log(response.data);
     
       if (response.data.success) {
-        localStorage.setItem("user", JSON.stringify({ username }))
+        localStorage.setItem("user", JSON.stringify({ id: response.data.id, username }));
         navigate("/home");
       }
       else {

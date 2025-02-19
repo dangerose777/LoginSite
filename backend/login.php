@@ -23,7 +23,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     if ($password === $user['password']) {
-        echo json_encode(["success" => true, "message" => "Login successful"]);
+        echo json_encode(["success" => true, "message" => "Login successful", "id" => $user['id']]);
     } else {
         echo json_encode(["success" => false, "message" => "Invalid password"]);
     }

@@ -9,6 +9,7 @@ Login / Register / Todo site with "admin panel". As admin you can delete users t
 - React Icons
 
 ## Setup:
+in C:\xampp\htdocs\
 ```
 git clone https://github.com/dangerose777/LoginSite.git
 ```
@@ -43,11 +44,11 @@ npm run dev
 ### To do:
 #### UI
 - [x]  Login / register site
-- [ ]  User site
+- [x]  User site
 - [ ]  Admin site
 #### FUNCTIONALITY
 - [x]  Login / register site
-- [ ]  User site
+- [x]  User site
 - [ ]  Admin site
 - [x]  Database Users
-- [ ]  Database Tasks
+- [x]  Database Tasks

@@ -1,0 +1,54 @@
+.navbar {
+    position: absolute;
+    margin-top: -200px;
+}
+
+.tableTask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.tableTask table {
+    max-width: 500px;
+    width: 500px;
+    border: 1px solid;
+}
+
+.tableTask tr {
+    border: 1px solid;
+}
+.tableTask th {
+    border: 1px solid;
+}
+.tableTask td {
+    border: 1px solid;
+}
+
+#buttonLogout {
+    margin-left: 50px;
+}
+
+#addTaskText {
+    margin-top: 50px;
+}
+
+#inputTitle {
+    max-width: 200px;
+}
+
+#inputTask {
+    max-width: 300px;
+    margin-top: -38px;
+    margin-left: 200px;
+}
+
+#saveTaskButton {
+    margin-top: 20px;
+}
+
+#titleTable {
+    width: 200px;;
+}

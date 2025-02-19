@@ -57,6 +57,9 @@ body {
 
 #loginError {
     color: red;
+    position: absolute;
+    margin-top: 17px;
+    margin-left: 195px;
 }
 
 .password-container {
@@ -64,12 +67,12 @@ body {
     width: 100%;
   }
   
-  .password-container input {
+.password-container input {
     width: 100%;
-    padding-right: 40px; /* Miejsce na ikonę */
-  }
+    padding-right: 40px;
+}
   
-  .eye-icon {
+.eye-icon {
     position: absolute;
     right: 10px;
     top: 40%;
@@ -77,4 +80,4 @@ body {
     cursor: pointer;
     font-size: 20px;
     color: #555;
-  }
+}
