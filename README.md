@@ -43,11 +43,11 @@ php -S localhost:8000
 npm run dev
 ```
 ## To do:
-#### UI
+### UI
 - [x]  Login / register site
 - [x]  User site
 - [ ]  Admin site
-#### FUNCTIONALITY
+### FUNCTIONALITY
 - [x]  Login / register site
 - [x]  User site
 - [ ]  Admin site
