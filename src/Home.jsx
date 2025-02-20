@@ -36,6 +36,23 @@ function Home() {
     navigate("/");
   }
 
+  const handleDeleteTask = async (taskId) => {
+    if (!taskId) return;
+  
+    try {
+      const response = await axios.post("http://localhost:8000/deleteTask.php", { task_id: taskId });
+  
+      if (response.data.success) {
+        console.log("Task deleted");
+        fetchTasks();
+      } else {
+        console.error("Error while deleting task:", response.data.message);
+      }
+    } catch (error) {
+      console.error("Error while deleting task:", error);
+    }
+  };
+
   return (
     <div>
       <div className="navbar">
@@ -56,7 +73,7 @@ function Home() {
             {tasks.map(task => (
               <tr key={task.id}>
                 <td>{task.title}</td>
-                <td>{task.task}</td>
+                <td>{task.task} <button id="closeTaskButton" className="btn btn-danger" onClick={() => handleDeleteTask(task.id)}><p>x</p></button></td>
               </tr>
             ))}
           </tbody>

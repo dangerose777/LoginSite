@@ -7,6 +7,7 @@ Login / Register / Todo site with "admin panel". As admin you can delete users t
 - MySQL
 - Axios
 - React Icons
+- React Router
 
 ## Setup:
 in C:\xampp\htdocs\
@@ -19,19 +20,19 @@ cd LoginSite
 ```
 npm install
 ```
+After this, import 'loginsitedb.sql' in phpMyAdmin
 
-## Host PHP:
-If you have XAMPP:
+## Host PHP XAMPP:
 1) WIN+R
 2) sysdm.cpl
 3) advanced
 4) environment variables
 5) in system variables find Path
 6) edit
-7) add "C:\xampp\htdocs\LoginSite\backend" (or other path where you downloaded project)
+7) add "C:\xampp\htdocs\LoginSite-main\backend" (or other path where you downloaded project)
 8) open powershell
 ```
-cd C:\xampp\htdocs\LoginSite\backend
+cd C:\xampp\htdocs\LoginSite-main\backend
 ```
 ```
 php -S localhost:8000

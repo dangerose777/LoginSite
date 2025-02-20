@@ -52,3 +52,14 @@
 #titleTable {
     width: 200px;;
 }
+#closeTaskButton {
+    float: right;
+    height: 25px;
+    width: 25px;
+    font-size: 20px;
+}
+
+#closeTaskButton p {
+    margin-left: -4.5px;
+    margin-top: -13px;
+}
