@@ -38,16 +38,17 @@ cd C:\xampp\htdocs\LoginSite-main\backend
 php -S localhost:8000
 ```
 
-### Run:
+## Run:
 ```
 npm run dev
 ```
-### To do:
-#### UI
+
+## To do:
+### UI
 - [x]  Login / register site
 - [x]  User site
 - [ ]  Admin site
-#### FUNCTIONALITY
+### FUNCTIONALITY
 - [x]  Login / register site
 - [x]  User site
 - [ ]  Admin site
