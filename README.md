@@ -55,6 +55,8 @@ npm run dev
 - [ ]  Admin site
 - [x]  Database Users
 - [x]  Database Tasks
-### CHANGES
+### OTHER
 - [ ] Add if user exist in register
 - [ ] Change UI
+- [ ] Clean code
+- [ ] Add communication with user (about an unhosted server and other)
