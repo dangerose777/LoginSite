@@ -15,12 +15,12 @@ in C:\xampp\htdocs\
 git clone https://github.com/dangerose777/LoginSite.git
 ```
 ```
-cd LoginSite
+cd LoginSite-main
 ```
 ```
 npm install
 ```
-After this, import 'loginsitedb.sql' in phpMyAdmin
+After this, create loginsitedb and import 'loginsitedb.sql' in phpMyAdmin
 
 ## Host PHP XAMPP:
 1) WIN+R
@@ -30,7 +30,8 @@ After this, import 'loginsitedb.sql' in phpMyAdmin
 5) in system variables find Path
 6) edit
 7) add "C:\xampp\htdocs\LoginSite-main\backend" (or other path where you downloaded project)
-8) open powershell
+8) add "C:php\php.exe"
+9) open powershell
 ```
 cd C:\xampp\htdocs\LoginSite-main\backend
 ```
