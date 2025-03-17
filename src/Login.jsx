@@ -33,8 +33,15 @@ function Login() {
       console.log(response.data);
     
       if (response.data.success) {
-        localStorage.setItem("user", JSON.stringify({ id: response.data.id, username }));
-        navigate("/home");
+        const { id, is_admin } = response.data;
+        const isAdmin = parseInt(is_admin, 10) === 1;
+
+        localStorage.setItem("user", JSON.stringify({ id, username, is_admin: isAdmin }));
+        if (isAdmin) {
+          navigate("/admin");
+        } else {
+          navigate("/home");
+        }
       }
       else {
         setError(response.data.message);
@@ -103,7 +110,7 @@ function Login() {
               required
             />
             <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? <FaEyeSlash /> : <FaEye />} {}
+              {showPassword ? <FaEye /> : <FaEyeSlash />} {}
             </span>
           </div>
         {error && <p id="loginError">{error}</p>}
@@ -126,7 +133,7 @@ function Login() {
               required
             />
             <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? <FaEyeSlash /> : <FaEye />} {}
+              {showPassword ? <FaEye /> : <FaEyeSlash />} {}
             </span>
           </div>
         {error && <p id="loginError">{error}</p>}

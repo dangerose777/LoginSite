@@ -27,7 +27,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `users` (`id`, `username`, `password`, `is_admin`) VALUES
-(1, 'admin', 'admin', 0),
+(1, 'admin', 'admin', 1),
 (2, 'john', 'john1234', 0),
 (3, 'hogrider', 'hogrider1234', 0);
 
