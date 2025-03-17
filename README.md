@@ -31,7 +31,10 @@ After this, create loginsitedb and import 'loginsitedb.sql' in phpMyAdmin
 6) edit
 7) add "C:\xampp\htdocs\LoginSite-main\backend" (or other path where you downloaded project)
 8) add "C:\php\php.exe"
-9) open powershell
+9) add "C:\php"
+10) inf variables for user edit path
+11) add "C:\xampp\php"
+12) open powershell
 ```
 cd C:\xampp\htdocs\LoginSite-main\backend
 ```
