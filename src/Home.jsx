@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './Home.css';
@@ -6,28 +6,30 @@ import './Home.css';
 function Home() {
   const navigate = useNavigate();
   const [tasks, setTasks] = useState([]);
-  const user = JSON.parse(localStorage.getItem("user")) || null;
-  const userId = user && user.id ? user.id : null;
-  
-  //console.log("User:", user);
-  //console.log("User ID:", userId);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!user) {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (!storedUser) {
       navigate("/");
-    } else {
-      fetchTasks();
+      return;
     }
-  }, []);
-  
-  const fetchTasks = async () => {
+
+    setUser(storedUser);
+    fetchTasks(storedUser.id);
+  }, [navigate]);
+
+  const fetchTasks = async (userId) => {
     try {
       const response = await axios.get("http://localhost:8000/getTasks.php", {
-        params: { user_id: user.id }
+        params: { user_id: userId }
       });
       setTasks(response.data);
+      setLoading(false);
     } catch (error) {
-      console.error("Error in fetching: ", error);
+      console.error("Error while fetching: ", error);
     }
   };
 
@@ -38,13 +40,13 @@ function Home() {
 
   const handleDeleteTask = async (taskId) => {
     if (!taskId) return;
-  
+
     try {
       const response = await axios.post("http://localhost:8000/deleteTask.php", { task_id: taskId });
-  
+
       if (response.data.success) {
         console.log("Task deleted");
-        fetchTasks();
+        fetchTasks(user.id);
       } else {
         console.error("Error while deleting task:", response.data.message);
       }
@@ -52,6 +54,14 @@ function Home() {
       console.error("Error while deleting task:", error);
     }
   };
+
+  if (loading) {
+    return <h1>Loading</h1>;
+  }
+
+  if (!user) {
+    return <h1>Error</h1>;
+  }
 
   return (
     <div>
@@ -78,28 +88,25 @@ function Home() {
             ))}
           </tbody>
         </table>
-        <TaskForm userId={user.id} fetchTasks={fetchTasks}/>
+        <TaskForm userId={user.id} fetchTasks={fetchTasks} />
       </div>
     </div>
   );
 }
 
-function TaskForm({ userId, fetchTasks}) {
+function TaskForm({ userId, fetchTasks }) {
   const [title, setTitle] = useState("");
   const [task, setTask] = useState("");
-
-  //console.log("Received userId in TaskForm:", userId);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!userId) {
-      console.error("User id missing in local");
+      console.error("User id is missing in local");
       return;
     }
-  
+
     try {
-      //console.log("Sending task:", { user_id: userId, title, task });
       await axios.post("http://localhost:8000/addTask.php", {
         user_id: userId,
         title,
@@ -107,22 +114,20 @@ function TaskForm({ userId, fetchTasks}) {
       });
       setTitle("");
       setTask("");
-      fetchTasks();
-    }
-    catch (error) {
+      fetchTasks(userId);
+    } catch (error) {
       console.error("Error adding task:", error);
     }
   };
-  
 
   return (
     <form onSubmit={handleSubmit}>
       <h3 id="addTaskText">Add task</h3>
-      <input type="text" className="form-control" id="inputTitle" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
-      <input type="text" className="form-control" id="inputTask" placeholder="Description" value={task} onChange={(e) => setTask(e.target.value)} required/>
-      <button type="submit" id="saveTaskButton" className="btn btn-warning">Save</button>
+      <input type="text" className="form-control" id="inputTitle" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} required />
+      <input type="text" className="form-control" id="inputTask" placeholder="Description" value={task} onChange={(e) => setTask(e.target.value)} required />
+      <button type="submit" id="saveTaskButton" className="btn btn-warning">Add</button>
     </form>
-  )
+  );
 }
 
 export default Home;

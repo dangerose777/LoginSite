@@ -55,10 +55,9 @@ npm run dev
 ### FUNCTIONALITY
 - [x]  Login / register site
 - [x]  User site
-- [ ]  Admin site
+- [x]  Admin site
 - [x]  Database Users
 - [x]  Database Tasks
 ### OTHER
-- [x] Add if user exist in register
 - [ ] Change UI
 - [ ] Clean code
