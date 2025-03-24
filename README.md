@@ -51,7 +51,7 @@ npm run dev
 ### UI
 - [x]  Login / register site
 - [x]  User site
-- [ ]  Admin site
+- [x]  Admin site
 ### FUNCTIONALITY
 - [x]  Login / register site
 - [x]  User site
