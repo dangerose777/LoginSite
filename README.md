@@ -1,4 +1,4 @@
-# Login Site
+# Login Site | Completed: ✅
 Login / Register / Todo site with "admin panel". As admin you can delete users tasks.
 
 ## Technologies:
