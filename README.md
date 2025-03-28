@@ -58,6 +58,3 @@ npm run dev
 - [x]  Admin site
 - [x]  Database Users
 - [x]  Database Tasks
-### OTHER
-- [ ] Change UI
-- [ ] Clean code

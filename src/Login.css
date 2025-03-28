@@ -13,16 +13,20 @@ body {
     width: 330px;
     height: 250px;
     padding: 10px;
-    border: 2px solid #3F4F44;
+    border: 2px solid #ffffff;
     border-radius: 10px;
 }
 
 #inputUsername {
     margin-top: 20px;
+    background: none;
+    color: white;
 }
 
 #inputPassword {
     margin-top: 20px;
+    background: none;
+    color: white;
 }
 
 .buttonLogin {

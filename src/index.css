@@ -1,4 +1,6 @@
 body {
-    background-color: #2C3930;
-    color: #DCD7C9;
+    background-color: #1d6c00;
+    background-image: url("i_hate_gradients.png");
+    color: #ffffff;
+    background-repeat: repeat-x;
 }

@@ -1,0 +1,53 @@
+#buttonHome {
+    position: absolute;
+    margin-left: -160px;
+}
+#buttonLogout {
+    position: absolute;
+    margin-left: 60px;
+}
+
+.user-list li {
+    margin-top: 10px;
+}
+
+.user-list {
+    margin: -400px;
+    position: absolute;
+    margin-top: 0px;
+}
+
+.task-list {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 500px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    max-width: 500px;
+}
+
+#TitleTable{
+    width: 200px;
+    max-width: 200px;
+}
+
+.task-list table {
+    max-width: 500px;
+    width: 500px;
+    border: 1px solid;
+}
+
+.task-list tr {
+    border: 1px solid;
+    padding: 5px;
+}
+.task-list th {
+    border: 1px solid;
+    padding: 5px;
+}
+.task-list td {
+    border: 1px solid;
+    padding: 5px;
+}

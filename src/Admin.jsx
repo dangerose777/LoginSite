@@ -20,7 +20,6 @@ function Admin() {
 
     axios.post("http://localhost:8000/checkAdmin.php", { id: user.id })
       .then((response) => {
-        console.log("Admin check:", response.data);
         setIsAdmin(response.data.is_admin === 1);
       })
       .catch((error) => {
@@ -80,7 +79,6 @@ function Admin() {
       const response = await axios.post("http://localhost:8000/deleteTask.php", { task_id: taskId });
 
       if (response.data.success) {
-        console.log("Task deleted");
         fetchTasks(selectedUser.id);
       } else {
         console.error("Error", response.data.message);
@@ -98,47 +96,72 @@ function Admin() {
     <div className="admin-container">
       {isAdmin ? (
         <>
+        <div className="navbar">
           <h2>Admin Panel</h2>
           <button className="btn btn-danger" onClick={handleLogout} id="buttonLogout">Logout</button>
-          <button className="btn btn-warning" onClick={handleHome} id="buttonLogout">Home</button>
-          <div className="admin-content">
-            <div className="user-list">
-              <h3>Users:</h3>
-              {users.map(user => (
-                <button className="btn btn-success" key={user.id} onClick={() => handleSelectUser(user)}>
-                  {user.username}
-                </button>
-              ))}
-            </div>
+          <button className="btn btn-warning" onClick={handleHome} id="buttonHome">Home</button>
+        </div>
 
-            <div className="task-list">
-              {selectedUser ? (
-                <>
-                  <h3>{selectedUser.username} tasks:</h3>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Title</th>
-                        <th>Task</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tasks.map(task => (
-                        <tr key={task.id}>
-                          <td>{task.title}</td>
-                          <td>{task.task} <button className="btn btn-danger" onClick={() => handleDeleteTask(task.id)}>x</button></td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </>
-              ) : (
-                <h3>Select user</h3>
-              )}
-            </div>
+        <div className="admin-content">
+          <div className="user-list">
+            <h3>Users:</h3>
+            {users.map(user => (
+              <ul>
+                <li>
+                  <button className="btn btn-success" key={user.id} onClick={() => handleSelectUser(user)}>
+                  {user.username}
+                  </button>
+                </li>
+              </ul>
+            ))}
           </div>
+
+          <div className="task-list">
+            {selectedUser ? (
+            <>
+            <h3>{selectedUser.username} tasks:</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th id="TitleTable">Title</th>
+                  <th>Task</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tasks.map(task => (
+                <tr key={task.id}>
+                  <td>{task.title}</td>
+                  <td>{task.task} <button className="btn btn-danger" onClick={() => handleDeleteTask(task.id)}>x</button></td>
+                </tr>
+                ))}
+              </tbody>
+            </table>
+            </>
+            ) : (
+            <>
+            <h3>Select user</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th id="TitleTable">Title</th>
+                    <th>Task</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tasks.map(task => (
+                  <tr key={task.id}>
+                    <td>{task.title}</td>
+                    <td>{task.task} <button className="btn btn-danger" onClick={() => handleDeleteTask(task.id)}>x</button></td>
+                  </tr>
+                  ))}
+                </tbody>
+              </table>
+              </>
+              )}
+          </div>
+        </div>
         </>
-      ) : (
+        ) : (
         <h1>Access denied</h1>
       )}
     </div>

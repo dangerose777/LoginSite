@@ -16,7 +16,6 @@ function Home() {
       navigate("/");
       return;
     }
-
     setUser(storedUser);
     fetchTasks(storedUser.id);
   }, [navigate]);
@@ -45,7 +44,6 @@ function Home() {
       const response = await axios.post("http://localhost:8000/deleteTask.php", { task_id: taskId });
 
       if (response.data.success) {
-        console.log("Task deleted");
         fetchTasks(user.id);
       } else {
         console.error("Error while deleting task:", response.data.message);
@@ -66,7 +64,7 @@ function Home() {
   return (
     <div>
       <div className="navbar">
-        <h1 id="welcomeText">Hello {user.username}.</h1>
+        <h1 id="welcomeText">Hello {user.username}!</h1>
         <button className="btn btn-danger" onClick={handleLogout} id="buttonLogout">Logout</button>
       </div>
 
@@ -88,7 +86,9 @@ function Home() {
             ))}
           </tbody>
         </table>
-        <TaskForm userId={user.id} fetchTasks={fetchTasks} />
+      </div>
+      <div className="taskAddHolder">
+      <TaskForm userId={user.id} fetchTasks={fetchTasks} />
       </div>
     </div>
   );

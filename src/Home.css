@@ -3,12 +3,29 @@
     margin-top: -200px;
 }
 
+#buttonLogout {
+    left: 200px;
+    position: absolute;
+}
+
+.example::-webkit-scrollbar {
+    display: none;
+}
+
 .tableTask {
     position: absolute;
-    top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    max-height: 200px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.taskAddHolder {
+    position: absolute;
+    margin-left: -150px;
+    margin-top: 200px;
 }
 
 .tableTask table {
@@ -19,16 +36,15 @@
 
 .tableTask tr {
     border: 1px solid;
+    padding: 5px;
 }
 .tableTask th {
     border: 1px solid;
+    padding: 5px;
 }
 .tableTask td {
     border: 1px solid;
-}
-
-#buttonLogout {
-    margin-left: 50px;
+    padding: 5px;
 }
 
 #addTaskText {
@@ -37,12 +53,16 @@
 
 #inputTitle {
     max-width: 200px;
+    background: none;
+    color: white;
 }
 
 #inputTask {
     max-width: 300px;
     margin-top: -38px;
     margin-left: 200px;
+    background: none;
+    color: white;
 }
 
 #saveTaskButton {

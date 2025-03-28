@@ -19,7 +19,6 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
-    console.log("Password:", password);
 
     try {
       const response = await axios.post("http://localhost:8000/login.php", {
@@ -30,7 +29,6 @@ function Login() {
           'Content-Type': 'application/json',
         }
       });
-      console.log(response.data);
     
       if (response.data.success) {
         const { id, is_admin } = response.data;
