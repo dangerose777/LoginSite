@@ -4,8 +4,8 @@
 }
 
 #buttonLogout {
-    left: 200px;
-    position: absolute;
+    left: 365px;
+    position: relative;
 }
 
 .example::-webkit-scrollbar {
@@ -13,9 +13,6 @@
 }
 
 .tableTask {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     max-height: 200px;
     overflow-y: scroll;
     -ms-overflow-style: none;
@@ -23,9 +20,7 @@
 }
 
 .taskAddHolder {
-    position: absolute;
-    margin-left: -150px;
-    margin-top: 200px;
+    position: fixed;
 }
 
 .tableTask table {
