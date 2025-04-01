@@ -1,4 +1,4 @@
-# Login Site
+# Login Site | Completed: ✅
 Login / Register / Todo site with "admin panel". As admin you can delete users tasks.
 
 ## Technologies:
@@ -32,7 +32,7 @@ After this, create loginsitedb and import 'loginsitedb.sql' in phpMyAdmin
 7) add "C:\xampp\htdocs\LoginSite-main\backend" (or other path where you downloaded project)
 8) add "C:\php\php.exe"
 9) add "C:\php"
-10) inf variables for user edit path
+10) in variables for user edit path
 11) add "C:\xampp\php"
 12) open powershell
 ```
