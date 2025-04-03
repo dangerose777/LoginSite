@@ -2,7 +2,8 @@
 Login / Register / Todo site with "admin panel". As admin you can delete users tasks.
 
 ## Technologies:
-- React / Vite
+- React
+- Vite
 - Bootstrap
 - MySQL
 - Axios
